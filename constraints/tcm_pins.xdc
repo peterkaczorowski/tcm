@@ -115,10 +115,10 @@ set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVDS } [get_ports {trig_out_p[2]
 set_property -dict { PACKAGE_PIN L15 IOSTANDARD LVDS } [get_ports {trig_out_n[2]}]
 
 set_property -dict { PACKAGE_PIN M16 IOSTANDARD LVDS } [get_ports {trig_out_p[3]}]
-set_property -dict { PACKAGE_PIN M15 } [get_ports {trig_out_n[3]}]
+set_property -dict { PACKAGE_PIN M15 IOSTANDARD LVDS } [get_ports {trig_out_n[3]}]
 
 set_property -dict { PACKAGE_PIN N16 IOSTANDARD LVDS } [get_ports {trig_out_p[4]}]
-set_property -dict { PACKAGE_PIN N15 } [get_ports {trig_out_n[4]}]
+set_property -dict { PACKAGE_PIN N15 IOSTANDARD LVDS } [get_ports {trig_out_n[4]}]
 
 # -----------------------------------------------------------------------------
 # 8. Slow-control bus (parallel, to IPbus bridge FPGA or processor)

@@ -146,7 +146,8 @@ begin
             when C_REG_THR_VERTEX => thr_vx_win <= unsigned(reg_in.wdata(thr_vx_win'range));
             when C_REG_THR_SC     => thr_sc     <= unsigned(reg_in.wdata(thr_sc'range));
             when C_REG_THR_CENT   => thr_c      <= unsigned(reg_in.wdata(thr_c'range));
-            when C_REG_VERTEX_WIN => laser_bc   <= unsigned(reg_in.wdata(laser_bc'range));
+            when C_REG_LASER_BC   => laser_bc   <= unsigned(reg_in.wdata(laser_bc'range));
+            when C_REG_VERTEX_WIN => thr_vx_win <= unsigned(reg_in.wdata(thr_vx_win'range));
             when others           => null;
           end case;
         end if;
@@ -154,10 +155,12 @@ begin
         if reg_in.re = '1' then
           reg_out.ack <= '1';
           case reg_in.addr is
-            when C_REG_THR_MB     => reg_out.rdata <= std_logic_vector(resize(thr_mb,   32));
-            when C_REG_THR_VERTEX => reg_out.rdata <= std_logic_vector(resize(thr_vx_win, 32));
-            when C_REG_THR_SC     => reg_out.rdata <= std_logic_vector(resize(thr_sc,   32));
-            when C_REG_THR_CENT   => reg_out.rdata <= std_logic_vector(resize(thr_c,    32));
+            when C_REG_THR_MB      => reg_out.rdata <= std_logic_vector(resize(thr_mb,     32));
+            when C_REG_THR_VERTEX  => reg_out.rdata <= std_logic_vector(resize(thr_vx_win, 32));
+            when C_REG_THR_SC      => reg_out.rdata <= std_logic_vector(resize(thr_sc,     32));
+            when C_REG_THR_CENT    => reg_out.rdata <= std_logic_vector(resize(thr_c,      32));
+            when C_REG_LASER_BC    => reg_out.rdata <= std_logic_vector(resize(laser_bc,   32));
+            when C_REG_VERTEX_WIN  => reg_out.rdata <= std_logic_vector(resize(thr_vx_win, 32));
             when C_REG_TRIG_CNT_MB => reg_out.rdata <= std_logic_vector(cnt_mb_int);
             when C_REG_TRIG_CNT_VX => reg_out.rdata <= std_logic_vector(cnt_vx_int);
             when C_REG_TRIG_CNT_SC => reg_out.rdata <= std_logic_vector(cnt_sc_int);

@@ -147,7 +147,8 @@ PM data arrives (clk_bc)
 | 0x11    | THR_VERTEX    | R/W | Vertex half-window (time units)    |
 | 0x12    | THR_SC        | R/W | Semi-central charge threshold      |
 | 0x13    | THR_CENT      | R/W | Central charge threshold           |
-| 0x14    | VERTEX_WIN    | R/W | Laser BC number                    |
+| 0x14    | LASER_BC      | R/W | Laser bunch-crossing number        |
+| 0x15    | VERTEX_WIN    | R/W | Vertex timing half-window          |
 | 0x20    | ORBIT_ID      | R   | Current orbit counter              |
 | 0x21    | BC_ID         | R   | Current BC counter                 |
 | 0x30    | EVENT_CNT     | R   | Total triggered events             |

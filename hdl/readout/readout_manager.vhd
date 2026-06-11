@@ -122,7 +122,9 @@ begin
 
   fifo_empty <= '1' when wr_ptr = rd_ptr else '0';
   fifo_full  <= '1' when
-    (wr_ptr + 1) mod G_FIFO_DEPTH = rd_ptr else '0';
+    (unsigned(std_logic_vector(wr_ptr + 1)) and
+     to_unsigned(G_FIFO_DEPTH - 1, wr_ptr'length)) = rd_ptr
+    else '0';
 
   -- -------------------------------------------------------------------------
   -- Pipeline PM data to align with trigger output (3-cycle latency match)

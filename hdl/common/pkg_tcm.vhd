@@ -67,7 +67,8 @@ package pkg_tcm is
   constant C_REG_THR_VERTEX    : std_logic_vector(7 downto 0) := x"11";
   constant C_REG_THR_SC        : std_logic_vector(7 downto 0) := x"12";
   constant C_REG_THR_CENT      : std_logic_vector(7 downto 0) := x"13";
-  constant C_REG_VERTEX_WIN    : std_logic_vector(7 downto 0) := x"14";
+  constant C_REG_LASER_BC      : std_logic_vector(7 downto 0) := x"14";
+  constant C_REG_VERTEX_WIN    : std_logic_vector(7 downto 0) := x"15";
   constant C_REG_ORBIT_ID      : std_logic_vector(7 downto 0) := x"20";
   constant C_REG_BC_ID         : std_logic_vector(7 downto 0) := x"21";
   constant C_REG_EVENT_CNT     : std_logic_vector(7 downto 0) := x"30";
